@@ -1,4 +1,4 @@
-numcom = int(input())
+num_com = int(input())
 num_net = int(input())
 networks = [[0 for _ in range(num_com + 1)] for _ in range(num_com + 1)]
 
