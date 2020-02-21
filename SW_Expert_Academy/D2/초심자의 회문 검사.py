@@ -1,5 +1,4 @@
 n = int(input())
-
 for i in range(n) :
     text = list(input())
     for j in range(len(text)//2) :
