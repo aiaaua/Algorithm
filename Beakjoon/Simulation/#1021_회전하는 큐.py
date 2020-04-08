@@ -10,14 +10,12 @@ while q :
     idx = num_list.index(target)
     if idx < len(num_list) - idx :
         for i in range(idx) :
-            tmp = num_list.popleft()
-            num_list.append(tmp)
+            num_list.append(num_list.popleft())
         cnt += idx
         num_list.popleft()
     else : 
         for i in range(len(num_list) - idx) :
-            tmp = num_list.pop()
-            num_list.appendleft(tmp)
+            num_list.appendleft(num_list.pop())
         cnt += len(num_list) - idx
         num_list.popleft()
         
