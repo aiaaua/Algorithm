@@ -17,8 +17,6 @@ while True :
                     for nx, ny in (-1, -1), (-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1) :
                         dx, dy = x+nx, y+ny
                         if 0<=dx<h and 0<=dy<w :
-                            if mapp[dx][dy] == 1 and not check[dx][dy] :
-                                q.append([dx, dy])
-                                check[dx][dy] = True
+                            if mapp[dx][dy] == 1 and not check[dx][dy] : q.append([dx, dy]); check[dx][dy] = True
                 cnt += 1
     print(cnt)
