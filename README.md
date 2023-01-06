@@ -1,5 +1,3 @@
-# Algorithm
-# Problem Solving
-# Beakjoon, SW_Expert_Academy, Programmers, Leetcode
-## By Python
-### 2019.11.17 ~
+# Algorithm PS
+## Beakjoon, SW Expert Academy, Programmers, Leetcode
+## By Python (2019.11.17 ~ )
