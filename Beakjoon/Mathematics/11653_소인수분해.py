@@ -1,8 +1,9 @@
-N = int(input())
-i = 2
-while N != 1:
-    if N%i == 0:
-        N = N/i
+import sys
+
+N = int(sys.stdin.readline().rstrip())
+for i in range(2, int(N ** 0.5) + 1):
+    while N % i == 0:
         print(i)
-    else:
-        i += 1
+        N //= i
+if N > 1:
+    print(N)
