@@ -1,20 +1,25 @@
 import sys
-sys.setrecursionlimit(1000000)
+sys.setrecursionlimit(10000)
 
-def dfs(i) :
-    check[i] = True
-    for line in lines :
-        if i == line[0]-1 and not check[line[1]-1] : dfs(line[1]-1)
-        elif i == line[1]-1 and not check[line[0]-1] : dfs(line[0]-1)
+def dfs(v):
+    visited[v] = True
+    for e in adj[v]:
+        if not visited[e]:
+            dfs(e)
+            
+N, M = map(int, input().split())
+adj = [[] for _ in range(N + 1)]
+visited = [False] * (N + 1)
+count = 0
+
+for _ in range(M):
+    u, v = map(int, input().split())
+    adj[u].append(v)
+    adj[v].append(u)
     
-n, m = map(int, input().split())
-lines = [list(map(int, sys.stdin.readline().rstrip().split())) for i in range(m)]
-check = [False for _ in range(n)]
-answer = 0
+for j in range(1, N + 1):
+    if not visited[j]:
+        dfs(j)
+        count += 1
 
-for i in range(n) :
-    if not check[i] :
-        dfs(i)
-        answer += 1
-        
-print(answer)
+print(count)
